@@ -108,8 +108,8 @@ a:hover {
   overflow: hidden;
 }
 
-.no-scroll .wrapper {
-  overflow: hidden !important;
+.invisible {
+  display: none;
 }
 
 .header-top {
@@ -293,6 +293,7 @@ a:hover {
           justify-content: flex-start;
   text-align: start;
   padding: 12px 32px;
+  padding-left: 50px;
   border-radius: 100px;
   border: 2px solid #DDD;
   font-family: Roboto;
@@ -304,6 +305,9 @@ a:hover {
           flex: 1;
   margin: 0 40px;
   position: relative;
+  background-image: url(../img/search.png);
+  background-repeat: no-repeat;
+  background-position: 3%;
 }
 @media (max-width: 768px) {
   .header-main .container input {
@@ -374,7 +378,14 @@ a:hover {
 }
 .header-bottom .container {
   position: relative;
-  max-width: 100%;
+  max-width: 100% !important;
+}
+.header-bottom .container .nav-container {
+  width: 100%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  overflow-x: hidden;
 }
 .header-bottom .container .header-nav {
   display: -webkit-box;
@@ -417,14 +428,28 @@ a:hover {
   margin-right: 5px;
   max-width: 18px;
 }
-.header-bottom .container .scroller {
+.header-bottom .container .scroller-right {
   position: absolute;
   right: 0px;
   top: 0;
   cursor: pointer;
 }
 @media (max-width: 768px) {
-  .header-bottom .container .scroller {
+  .header-bottom .container .scroller-right {
+    display: none;
+  }
+}
+.header-bottom .container .scroller-left {
+  position: absolute;
+  left: 0px;
+  top: 0;
+  z-index: 10;
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+  cursor: pointer;
+}
+@media (max-width: 768px) {
+  .header-bottom .container .scroller-left {
     display: none;
   }
 }

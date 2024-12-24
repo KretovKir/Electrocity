@@ -78,10 +78,9 @@ a
 
 
 
+.invisible
+  display: none
 
-.no-scroll
-  .wrapper
-    overflow: hidden !important
     
 .header-top
   border-bottom: 2px solid #E8E8E8
@@ -188,7 +187,8 @@ a
       display: flex
       justify-content: flex-start
       text-align: start 
-      padding: 12px 32px
+      padding: 12px 32px 
+      padding-left: 50px
       border-radius: 100px
       border: 2px solid #DDD
       font-family: Roboto
@@ -198,6 +198,9 @@ a
       flex: 1
       margin: 0 40px
       position: relative
+      background-image: url(../img/search.png)
+      background-repeat: no-repeat
+      background-position: 3%
 
       
 
@@ -208,6 +211,8 @@ a
       @media( max-width: 576px)
         margin: 0 15px
         display: none
+
+
 
 .header-main__mobile
   display: none
@@ -248,8 +253,13 @@ a
   margin-top: 20px
   .container
     position: relative
-    max-width: 100%
+    max-width: 100% !important
     // overflow-x: hidden
+
+    .nav-container
+      width: 100%
+      height: fit-content
+      overflow-x: hidden
     
     .header-nav
       display: flex
@@ -287,10 +297,21 @@ a
         // height: 0
 
     
-    .scroller
+    .scroller-right
       position: absolute
       right: 0px
       top: 0
+      cursor: pointer
+
+      @media( max-width: 768px)
+        display: none
+
+    .scroller-left
+      position: absolute
+      left: 0px
+      top: 0
+      z-index: 10
+      transform: rotate(180deg)
       cursor: pointer
 
       @media( max-width: 768px)
